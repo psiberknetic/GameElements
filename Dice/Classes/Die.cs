@@ -6,14 +6,14 @@ namespace Dice
 {
     public class Die : IDie
     {
-        public Die(int? sides = 6)
+        public Die(int sides = 6)
         {
             if (sides <= 0)
             {
                 throw new ArgumentException("Sides must be greater than zero", "sides");
             }
 
-            _sides = sides.Value;
+            _sides = sides;
             Roll();
         }
 
