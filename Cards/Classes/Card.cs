@@ -8,14 +8,18 @@ namespace Cards
 {
     public class Card : ICard
     {
+        private readonly CardValue _value;
+        private readonly Suit _suit;
+
         internal Card(CardValue value, Suit suit)
         {
-            throw new NotImplementedException();
+            _value = value;
+            _suit = suit;
         }
 
-        public Suit Suit => throw new NotImplementedException();
+        public Suit Suit => _suit;
 
-        public CardValue Value => throw new NotImplementedException();
+        public CardValue Value => _value;
 
         public override string ToString()
         {
