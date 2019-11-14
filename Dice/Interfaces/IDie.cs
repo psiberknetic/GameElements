@@ -8,6 +8,7 @@ namespace Dice
     {
         IDie Roll();
 
+        Guid Id { get; }
         int Value { get; }
         int Sides { get; }
     }

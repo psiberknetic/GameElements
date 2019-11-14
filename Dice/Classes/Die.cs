@@ -6,19 +6,23 @@ namespace Dice
 {
     public class Die : IDie
     {
-        public Die(int sides)
+        public Die(int? sides = 6)
         {
             if (sides <= 0)
             {
                 throw new ArgumentException("Sides must be greater than zero", "sides");
             }
 
-            _sides = sides;
+            _sides = sides.Value;
+            Roll();
         }
 
-        private Random _random = new Random();
-        private int _sides;
+        private readonly Random _random = new Random();
+        private readonly Guid _id = Guid.NewGuid();
+        private readonly int _sides;
         private int _value;
+
+        public Guid Id => _id;
 
         public int Value => _value;
 
